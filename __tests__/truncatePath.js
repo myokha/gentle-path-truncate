@@ -1,4 +1,4 @@
-const truncatePath = require('../src')
+import truncatePath from '../src'
 
 const PATH_LIMIT = 40
 

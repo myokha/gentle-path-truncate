@@ -40,6 +40,7 @@ npm test
 ### Publish
 
 ```bash
+npm run build
 npm version
 npm publish
 ```

@@ -1,6 +1,6 @@
-const truncate = require('./truncate')
+import truncate from './truncate'
 
-module.exports = function truncatePath (path, max, ellipsis = '...') {
+export default (path, max, ellipsis = '...') => {
   let maxlen = max
   const file = {}
   if (path.includes('/.')) {

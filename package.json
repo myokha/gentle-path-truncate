@@ -2,8 +2,9 @@
   "name": "gentle-path-truncate",
   "version": "0.0.1",
   "description": "A package which nicely truncates path strings.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel src --out-dir dist",
     "test": "jest",
     "lint": "eslint ."
   },
@@ -22,6 +23,14 @@
     ]
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
+    "babel-plugin-transform-es3-property-literals": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-standard": "^12.0.0",

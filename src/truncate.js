@@ -1,4 +1,4 @@
-function truncate (arr, max, joinSymb = '', ellipsis = '...') {
+export default function truncate (arr, max, joinSymb = '', ellipsis = '...') {
   const str = arr.join(joinSymb)
   let mid = getMiddle(arr.length)
 
@@ -16,5 +16,3 @@ function truncate (arr, max, joinSymb = '', ellipsis = '...') {
 function getMiddle (val) {
   return Math.floor(val / 2)
 }
-
-module.exports = truncate
