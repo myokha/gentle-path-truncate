@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "jest"
+  ],
+  "extends": [
+    "airbnb-base",
+    "standard",
+    "plugin:jest/recommended"
+  ],
+  "rules": {
+    "no-console": "off",
+    "no-underscore-dangle": "off",
+    "comma-dangle": "off",
+    "class-methods-use-this": "off"
+  }
+}
