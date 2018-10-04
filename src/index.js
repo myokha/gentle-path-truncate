@@ -10,20 +10,17 @@ export default (path, max, ellipsis = '...') => {
     file.ext = []
   } else {
     file.path = path.split('/').filter(Boolean)
-    file.ext = file.path.pop().split('.')
-    file.name = file.ext.splice(0, 1)
-    const [a] = file.name
-
-    file.name = a
+    file.name = file.path.pop().split('.')
+    file.ext = file.name.pop()
+    file.name = file.name.join('.')
   }
 
   let resStr = ''
 
   // add extension
   if (file.ext.length) {
-    const prep = `.${file.ext.join('.')}`
-    resStr = `${prep}${resStr}`
-    maxlen -= prep.length
+    resStr = `.${file.ext}${resStr}`
+    maxlen -= resStr.length
   }
 
   // add add filename

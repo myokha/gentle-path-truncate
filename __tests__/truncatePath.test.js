@@ -42,4 +42,16 @@ describe('Should return correct line of text', () => {
     const res = truncatePath('plugin/connect/modules/beans/filenameWhichIsSuperLongAndWayLongerThanItShouldBe.json', PATH_LIMIT)
     expect(res).toBe('.../filenameWhichI...ThanItShouldBe.json')
   })
+
+  it('Shoul correctly handle filenames with `.` in them while result string is short', () => {
+    const res = truncatePath('tests/functional/teststr_soo_tasty.teststr_environment.json', 27)
+
+    expect(res).toBe('.../teststr_...ronment.json')
+  })
+
+  it('Shoul correctly handle filenames with `.` in them while result string is long', () => {
+    const res = truncatePath('tests/functional/teststr_soo_tasty.teststr_environment.json', PATH_LIMIT)
+
+    expect(res).toBe('.../teststr_soo_ta...tr_environment.json')
+  })
 })
