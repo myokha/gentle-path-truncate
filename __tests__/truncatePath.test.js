@@ -43,15 +43,20 @@ describe('Should return correct line of text', () => {
     expect(res).toBe('.../filenameWhichI...ThanItShouldBe.json')
   })
 
-  it('Shoul correctly handle filenames with `.` in them while result string is short', () => {
+  it('Should correctly handle filenames with `.` in them while result string is short', () => {
     const res = truncatePath('tests/functional/teststr_soo_tasty.teststr_environment.json', 27)
 
     expect(res).toBe('.../teststr_...ronment.json')
   })
 
-  it('Shoul correctly handle filenames with `.` in them while result string is long', () => {
+  it('Should correctly handle filenames with `.` in them while result string is long', () => {
     const res = truncatePath('tests/functional/teststr_soo_tasty.teststr_environment.json', PATH_LIMIT)
 
     expect(res).toBe('.../teststr_soo_ta...tr_environment.json')
+  })
+
+  it('Should correctly handle filenames with a lot of `.` in them while result string is long', () => {
+    const res = truncatePath('frontend/src/app/components/core/somerand_pathname/rand.somerand_filename.partofname.extent', 28)
+    expect(res).toBe('.../rand.so...tofname.extent')
   })
 })
